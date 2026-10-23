@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="ad.size" content="width=300,height=600">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=300,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Tvardi Therapeutics (Nasdaq: TVRD) · Investor Alerts · 300x600</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  Tvardi Therapeutics, Inc. (Nasdaq: TVRD), IR display banner, 300x600.
+  Concept C: Motif / Dark + investor email sign-up.
+  Promotes: https://ir-landing-concepts-tvard.netlify.app/
+  Same four motif slides as Concept A (flame over a STAT3 node, dashed
+  orbits, converging pathways with travelling ember pulses, inline SVG,
+  no raster images), nudged up 10px to make room for the sign-up. A's
+  CTA button is replaced by an in-banner email sign-up (input + Subscribe,
+  consent + forward-looking-statements line) that posts to SIGNUP_ENDPOINT
+  in script.js. Every other click goes to clickTag. Auto-rotation stops
+  after ~27s on slide 1. Every number is sourced from the IR page.
+-->
+
+<div id="banner" aria-label="Tvardi Therapeutics investor relations advertisement with investor email alerts sign-up">
+
+  <div id="slides">
+
+    <!-- Slide 1 · Overview: the hero motif (dual-signal convergence on STAT3) -->
+    <section class="slide" data-index="0">
+      <div class="slide-bg" aria-hidden="true">
+        <svg class="motif" viewBox="0 0 300 300" aria-hidden="true">
+          <defs>
+            <radialGradient id="a-glow-1" cx="150" cy="150" r="58" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F5A623" stop-opacity=".55"/><stop offset=".3" stop-color="#F5A623" stop-opacity=".15"/><stop offset="1" stop-color="#F5A623" stop-opacity="0"/></radialGradient>
+            <linearGradient id="a-flame-1" x1="20" y1="0" x2="20" y2="52" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFCD34"/><stop offset="1" stop-color="#F5A623"/></linearGradient>
+          </defs>
+          <g class="drift">
+            <circle cx="150" cy="150" r="58" fill="url(#a-glow-1)"/>
+            <circle class="orbit" cx="150" cy="150" r="70"/>
+            <circle class="orbit" cx="150" cy="150" r="46"/>
+            <!-- the site hero's tulip fan (M50,344 Q120,292 190,190 ...), rescaled to this node and orbit -->
+            <g class="paths">
+              <path d="M57,225 Q100,200 144,151"/>
+              <path d="M84,233 Q119,211 148,154"/>
+              <path d="M51,199 Q93,189 141,147"/>
+              <path d="M243,225 Q200,200 156,151"/>
+              <path d="M216,233 Q181,211 152,154"/>
+              <path d="M249,199 Q207,189 159,147"/>
+            </g>
+            <g class="pulses">
+              <circle class="pulse" r="2.4" style="offset-path:path('M57,225 Q100,200 144,151')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M84,233 Q119,211 148,154')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M51,199 Q93,189 141,147')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M243,225 Q200,200 156,151')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M216,233 Q181,211 152,154')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M249,199 Q207,189 159,147')"/>
+            </g>
+            <g transform="translate(131,76) scale(.95)"><g class="flame">
+              <path d="M18 0C15 8 8 12 8 22C8 30 13 36 20 36C27 36 32 30 32 22C32 15 27 12 25 6C24 12 22 14 20 14C17 14 18 6 18 0Z" fill="url(#a-flame-1)"/>
+              <path d="M18 14C15 20 11 24 11 30C11 38 15 44 20 46C25 44 29 38 29 30C29 25 26 21 24 17C23.5 22 21.5 25 20 25C18 25 18.5 18 18 14Z" fill="#F5A623"/>
+            </g></g>
+            <circle class="node" cx="150" cy="150" r="4.5"/>
+            <text class="tag" x="150" y="170" text-anchor="middle">STAT3</text>
+          </g>
+          <text class="lbl" x="50" y="243">INTRINSIC</text>
+          <text class="lbl-sub" x="50" y="252">Tumor / fibrotic cell</text>
+          <text class="lbl" x="250" y="243" text-anchor="end">EXTRINSIC</text>
+          <text class="lbl-sub" x="250" y="252" text-anchor="end">Immune cell</text>
+        </svg>
+      </div>
+      <div class="slide-scrim-top"></div>
+      <div class="slide-scrim-bottom"></div>
+      <div class="slide-copy">
+        <div class="mid-chip">
+          <span class="chip-num">2</span>
+          <span class="chip-label">Clinical STAT3 programs<br>TTI-101 · TTI-109</span>
+        </div>
+        <div class="copy-bottom">
+          <div class="kicker">Oral STAT3 inhibitors</div>
+          <h1>Oral medicines<br>for a target once<br>thought <em>undruggable.</em></h1>
+          <p>Where cancer, fibrosis &amp; chronic<br>inflammation converge.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 2 · Proof: pathways converge; STAT3 itself is inhibited at the shared node -->
+    <section class="slide" data-index="1">
+      <div class="slide-bg" aria-hidden="true">
+        <svg class="motif" viewBox="0 0 300 300" aria-hidden="true">
+          <defs>
+            <radialGradient id="a-glow-2" cx="150" cy="150" r="58" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F5A623" stop-opacity=".22"/><stop offset=".45" stop-color="#F5A623" stop-opacity=".07"/><stop offset="1" stop-color="#F5A623" stop-opacity="0"/></radialGradient>
+            <linearGradient id="a-flame-2" x1="20" y1="0" x2="20" y2="52" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFCD34"/><stop offset="1" stop-color="#F5A623"/></linearGradient>
+          </defs>
+          <g class="drift">
+            <circle cx="150" cy="150" r="58" fill="url(#a-glow-2)"/>
+            <circle class="orbit" cx="150" cy="150" r="70"/>
+            <circle class="orbit" cx="150" cy="150" r="46"/>
+            <!-- same six pathways as slide 1, running all the way into the node -->
+            <g class="paths">
+              <path d="M57,225 Q100,200 144,151"/>
+              <path d="M84,233 Q119,211 148,154"/>
+              <path d="M51,199 Q93,189 141,147"/>
+              <path d="M243,225 Q200,200 156,151"/>
+              <path d="M216,233 Q181,211 152,154"/>
+              <path d="M249,199 Q207,189 159,147"/>
+            </g>
+            <g class="pulses pulses-stop">
+              <circle class="pulse" r="2.4" style="offset-path:path('M57,225 Q100,200 144,151')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M84,233 Q119,211 148,154')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M51,199 Q93,189 141,147')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M243,225 Q200,200 156,151')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M216,233 Q181,211 152,154')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M249,199 Q207,189 159,147')"/>
+            </g>
+            <g transform="translate(134,80) scale(.8)"><g class="flame flame-low">
+              <path d="M18 0C15 8 8 12 8 22C8 30 13 36 20 36C27 36 32 30 32 22C32 15 27 12 25 6C24 12 22 14 20 14C17 14 18 6 18 0Z" fill="url(#a-flame-2)"/>
+              <path d="M18 14C15 20 11 24 11 30C11 38 15 44 20 46C25 44 29 38 29 30C29 25 26 21 24 17C23.5 22 21.5 25 20 25C18 25 18.5 18 18 14Z" fill="#F5A623"/>
+            </g></g>
+            <!-- inhibition sits on STAT3 itself: a tight ring around the dimmed node -->
+            <circle class="ring" cx="150" cy="150" r="11"/>
+            <circle class="node node-off" cx="150" cy="150" r="4.5"/>
+            <text class="tag tag-off" x="150" y="172" text-anchor="middle">STAT3</text>
+            <path class="leader" d="M158.5,142.5 L166,135"/>
+            <text class="tag callout" x="169" y="125">TTI-101</text>
+            <text class="lbl callout" x="169" y="134.5">SHARED NODE</text>
+            <text class="lbl-sub callout" x="169" y="143.5">Inhibited directly</text>
+          </g>
+          <text class="lbl" x="50" y="243">INTRINSIC</text>
+          <text class="lbl-sub" x="50" y="252">Tumor / fibrotic cell</text>
+          <text class="lbl" x="250" y="243" text-anchor="end">EXTRINSIC</text>
+          <text class="lbl-sub" x="250" y="252" text-anchor="end">Immune cell</text>
+        </svg>
+      </div>
+      <div class="slide-scrim-top"></div>
+      <div class="slide-scrim-bottom"></div>
+      <div class="slide-copy">
+        <div class="mid-chip">
+          <span class="chip-num">9.4<em>%</em></span>
+          <span class="chip-label">Fibrosis-score decrease, wk 12<br>vs 2.4% on placebo</span>
+        </div>
+        <div class="copy-bottom">
+          <div class="kicker">TTI-101 · Clinical evidence</div>
+          <h1>Fibrosis score<br>improvement in<br><em>IPF at week 12.</em></h1>
+          <p>Phase 2 REVERT IPF, per company disclosures.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3 · Platform: TTI-109 sheds its phosphate cap and becomes active drug -->
+    <section class="slide" data-index="2">
+      <div class="slide-bg" aria-hidden="true">
+        <svg class="motif" viewBox="0 0 300 300" aria-hidden="true">
+          <defs>
+            <radialGradient id="a-glow-3" cx="214" cy="150" r="54" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F5A623" stop-opacity=".5"/><stop offset=".3" stop-color="#F5A623" stop-opacity=".14"/><stop offset="1" stop-color="#F5A623" stop-opacity="0"/></radialGradient>
+            <linearGradient id="a-flame-3" x1="20" y1="0" x2="20" y2="52" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFCD34"/><stop offset="1" stop-color="#F5A623"/></linearGradient>
+          </defs>
+          <g class="drift">
+            <circle cx="214" cy="150" r="54" fill="url(#a-glow-3)"/>
+            <!-- target: STAT3 node with orbits -->
+            <circle class="orbit" cx="214" cy="150" r="44"/>
+            <circle class="orbit" cx="214" cy="150" r="28"/>
+            <!-- clock face around the prodrug: 11 ticks (10 o'clock omitted for the phosphate cap), a sweep that stops short of 2 o'clock -->
+            <g class="ticks">
+              <path d="M84,109V113M104.5,114.5L102.5,118M119.5,129.5L116,131.5M125,150H121M119.5,170.5L116,168.5M104.5,185.5L102.5,182M84,191V187M63.5,185.5L65.5,182M48.5,170.5L52,168.5M43,150H47M63.5,114.5L65.5,118"/>
+            </g>
+            <circle class="sweep" cx="84" cy="150" r="34" pathLength="100" transform="rotate(-90 84 150)"/>
+            <!-- flow: the active core travels into STAT3 -->
+            <path id="a-flow-3" class="flow" d="M104,146 Q158,112 206,146"/>
+            <text class="lbl lbl-flow" dy="-8"><textPath href="#a-flow-3" startOffset="50%" text-anchor="middle">ACTIVE TTI-101</textPath></text>
+            <g class="pulses">
+              <circle class="pulse" r="2.4" style="offset-path:path('M104,146 Q158,112 206,146')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M104,146 Q158,112 206,146')"/>
+              <circle class="pulse" r="2.4" style="offset-path:path('M104,146 Q158,112 206,146')"/>
+            </g>
+            <!-- molecule: TTI-101 core (hexagonal ring) -->
+            <g class="mol">
+              <path d="M84,133L98.7,141.5L98.7,158.5L84,167L69.3,158.5L69.3,141.5Z"/>
+              <circle cx="84" cy="133" r="2.4"/><circle cx="98.7" cy="141.5" r="2.4"/><circle cx="98.7" cy="158.5" r="2.4"/>
+              <circle cx="84" cy="167" r="2.4"/><circle cx="69.3" cy="158.5" r="2.4"/><circle cx="69.3" cy="141.5" r="2.4"/>
+            </g>
+            <!-- phosphate cap: detaches, then the core is free to act -->
+            <g class="cap">
+              <path class="cap-bond" d="M69.3,141.5L60.5,136.4"/>
+              <circle class="cap-ring" cx="54" cy="132.6" r="7.5"/>
+              <text class="cap-p" x="54" y="135.4" text-anchor="middle">P</text>
+            </g>
+            <!-- the slide-1 lockup: flame over the STAT3 node -->
+            <g transform="translate(205,113) scale(.45)"><g class="flame">
+              <path d="M18 0C15 8 8 12 8 22C8 30 13 36 20 36C27 36 32 30 32 22C32 15 27 12 25 6C24 12 22 14 20 14C17 14 18 6 18 0Z" fill="url(#a-flame-3)"/>
+              <path d="M18 14C15 20 11 24 11 30C11 38 15 44 20 46C25 44 29 38 29 30C29 25 26 21 24 17C23.5 22 21.5 25 20 25C18 25 18.5 18 18 14Z" fill="#F5A623"/>
+            </g></g>
+            <circle class="node" cx="214" cy="150" r="4.5"/>
+            <text class="tag" x="214" y="170" text-anchor="middle">STAT3</text>
+          </g>
+          <text class="lbl" x="84" y="214" text-anchor="middle">TTI-109</text>
+          <text class="lbl-sub" x="84" y="223" text-anchor="middle">Phosphate prodrug</text>
+          <text class="lbl" x="214" y="214" text-anchor="middle">TARGET ENGAGEMENT</text>
+          <text class="lbl-sub" x="214" y="223" text-anchor="middle">Confirmed in Phase 1</text>
+        </svg>
+      </div>
+      <div class="slide-scrim-top"></div>
+      <div class="slide-scrim-bottom"></div>
+      <div class="slide-copy">
+        <div class="mid-chip">
+          <span class="chip-num">&lt;2<em>&nbsp;hrs</em></span>
+          <span class="chip-label">TTI-109 prodrug<br>conversion to active drug</span>
+        </div>
+        <div class="copy-bottom">
+          <div class="kicker">Next-gen prodrug · TTI-109</div>
+          <h1>TTI-101-equivalent<br>exposure, improved<br><em>tolerability.</em></h1>
+          <p>TTI-109 diarrhea events avg. 0.46 days<br>vs 3.35 for TTI-101.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4 · Catalyst: two sourced milestones reached; the flame-lit node marks the Phase 2 HCC readout next -->
+    <section class="slide" data-index="3">
+      <div class="slide-bg" aria-hidden="true">
+        <svg class="motif" viewBox="0 0 300 300" aria-hidden="true">
+          <defs>
+            <radialGradient id="a-glow-4" cx="230" cy="167" r="50" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F5A623" stop-opacity=".42"/><stop offset=".35" stop-color="#F5A623" stop-opacity=".12"/><stop offset="1" stop-color="#F5A623" stop-opacity="0"/></radialGradient>
+            <linearGradient id="a-flame-4" x1="20" y1="0" x2="20" y2="52" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFCD34"/><stop offset="1" stop-color="#F5A623"/></linearGradient>
+          </defs>
+          <g class="drift drift-rail">
+            <circle cx="230" cy="167" r="50" fill="url(#a-glow-4)"/>
+            <circle class="orbit" cx="230" cy="167" r="24"/>
+            <circle class="orbit" cx="230" cy="167" r="14"/>
+            <path class="rail-base" d="M50,167H250"/>
+            <path class="rail-done" d="M70,167H150"/>
+            <path class="rail-next" d="M150,167H222"/>
+            <g class="pulses pulses-rail">
+              <circle class="pulse" r="2.2" style="offset-path:path('M70,167 L224,167')"/>
+              <circle class="pulse" r="2.2" style="offset-path:path('M70,167 L224,167')"/>
+              <circle class="pulse" r="2.2" style="offset-path:path('M70,167 L224,167')"/>
+            </g>
+            <g class="step-done">
+              <circle class="halo" cx="70" cy="167" r="9"/><circle cx="70" cy="167" r="4.6"/>
+              <circle class="halo" cx="150" cy="167" r="9"/><circle cx="150" cy="167" r="4.6"/>
+            </g>
+            <circle class="ping" cx="230" cy="167" r="6"/>
+            <circle class="step-next" cx="230" cy="167" r="6"/>
+            <!-- the slide-1 lockup: flame over the next node -->
+            <g transform="translate(221.6,134) scale(.42)"><g class="flame">
+              <path d="M18 0C15 8 8 12 8 22C8 30 13 36 20 36C27 36 32 30 32 22C32 15 27 12 25 6C24 12 22 14 20 14C17 14 18 6 18 0Z" fill="url(#a-flame-4)"/>
+              <path d="M18 14C15 20 11 24 11 30C11 38 15 44 20 46C25 44 29 38 29 30C29 25 26 21 24 17C23.5 22 21.5 25 20 25C18 25 18.5 18 18 14Z" fill="#F5A623"/>
+            </g></g>
+            <text class="lbl lbl-step" x="70" y="199" text-anchor="middle">REVERT IPF</text>
+            <text class="lbl-sub" x="70" y="208" text-anchor="middle">Phase 2 data</text>
+            <text class="lbl lbl-step" x="150" y="199" text-anchor="middle">TTI-109</text>
+            <text class="lbl-sub" x="150" y="208" text-anchor="middle">Phase 1 complete</text>
+            <text class="lbl lbl-step lbl-next" x="230" y="199" text-anchor="middle">PHASE 2 HCC</text>
+            <text class="lbl-sub" x="230" y="208" text-anchor="middle">NCT05440708</text>
+          </g>
+        </svg>
+      </div>
+      <div class="slide-scrim-top"></div>
+      <div class="slide-scrim-bottom"></div>
+      <div class="slide-copy">
+        <div class="mid-chip">
+          <span class="chip-num">H2<em>&nbsp;2026</em></span>
+          <span class="chip-label">Topline Phase 2 HCC<br>data expected</span>
+        </div>
+        <div class="copy-bottom">
+          <div class="kicker">Catalyst · Illustrative financials</div>
+          <h1>Next up: topline<br>Phase 2 data<br><em>in HCC.</em></h1>
+          <p>$25.0M cash &amp; short-term investments, Mar 31, 2026.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Persistent chrome: sits above the rotating slides -->
+  <header id="top-bar" class="reveal" data-delay="0">
+    <div id="logo">
+      <svg class="mark" viewBox="0 0 40 52" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mark-flame" x1="20" y1="0" x2="20" y2="52" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFCD34"/><stop offset="1" stop-color="#F5A623"/></linearGradient></defs><path d="M18 0C15 8 8 12 8 22C8 30 13 36 20 36C27 36 32 30 32 22C32 15 27 12 25 6C24 12 22 14 20 14C17 14 18 6 18 0Z" fill="url(#mark-flame)"/><path d="M18 14C15 20 11 24 11 30C11 38 15 44 20 46C25 44 29 38 29 30C29 25 26 21 24 17C23.5 22 21.5 25 20 25C18 25 18.5 18 18 14Z" fill="#F5A623"/></svg>
+      <span id="wordmark">tvardi<small>Therapeutics</small></span>
+    </div>
+    <div id="eyebrow">INVESTOR&nbsp;RELATIONS&nbsp;·&nbsp;Nasdaq:&nbsp;TVRD</div>
+  </header>
+
+  <button type="button" class="nav-arrow" id="arrow-prev" aria-label="Previous slide">
+    <svg viewBox="0 0 16 16"><path d="M10 3 6 8l4 5" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button type="button" class="nav-arrow" id="arrow-next" aria-label="Next slide">
+    <svg viewBox="0 0 16 16"><path d="M6 3l4 5-4 5" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <div id="bottom-fixed" class="reveal" data-delay="4">
+    <div id="dots" role="tablist" aria-label="Slide selector">
+      <button class="dot active" data-index="0" aria-label="Slide 1: Oral STAT3 inhibitors"></button>
+      <button class="dot" data-index="1" aria-label="Slide 2: REVERT IPF Phase 2 data"></button>
+      <button class="dot" data-index="2" aria-label="Slide 3: TTI-109 prodrug"></button>
+      <button class="dot" data-index="3" aria-label="Slide 4: HCC topline catalyst"></button>
+    </div>
+
+    <div id="stat-row">
+      <div class="stat">
+        <span class="stat-num">HCC<em> · </em>IPF</span>
+        <span class="stat-label">Lead indications</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <span class="stat-num">Orphan<em> + </em>Fast Track</span>
+        <span class="stat-label">FDA designations, HCC</span>
+      </div>
+    </div>
+
+    <!-- In-banner mailing-list sign-up, in the slot A uses for its CTA.
+         Submits to SIGNUP_ENDPOINT in script.js; the error message swaps
+         in for the consent line and the success state swaps in over the
+         input row, so nothing shifts. -->
+    <form id="signup" novalidate>
+      <label class="sr-only" for="signup-email">Email address for Tvardi investor alerts</label>
+      <div id="signup-row">
+        <input type="email" id="signup-email" name="email" placeholder="Email for investor alerts" autocomplete="email" inputmode="email" spellcheck="false" required>
+        <button type="submit" id="signup-btn">Subscribe</button>
+        <div id="signup-done" aria-hidden="true">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5 6.5 11.5 12.5 4.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span id="signup-done-text">You're subscribed. Watch your inbox.</span>
+        </div>
+      </div>
+      <p id="signup-consent">By subscribing, you consent to receive investor-related emails from Tvardi Therapeutics, Inc. You can unsubscribe at any time.</p>
+      <p id="signup-msg" role="status" aria-live="polite"></p>
+      <p id="fls-line">Forward-looking statements · see SEC filings for risks</p>
+    </form>
+  </div>
+
+  <!-- Standard HTML5-ad click-tag plumbing -->
+  <div id="click-tag-wrapper"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

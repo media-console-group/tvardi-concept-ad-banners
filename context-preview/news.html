@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>In-Context Preview — Sample News Publisher Page</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { background:#e2e5e8; font-family:Helvetica, Arial, sans-serif; }
+
+  /* ---- disclaimer strip ---- */
+  #disclaimer {
+    background:#111318;
+    color:rgba(255,255,255,0.55);
+    font-size:0.68rem;
+    letter-spacing:0.02em;
+    text-align:center;
+    padding:7px 12px;
+  }
+  #disclaimer strong { color:rgba(255,255,255,0.85); }
+
+  /* ---- fake browser chrome ---- */
+  #browser-chrome {
+    background:#dfe1e5;
+    border-bottom:1px solid #c3c6cb;
+    padding:9px 14px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  #traffic-lights { display:flex; gap:6px; flex:0 0 auto; }
+  #traffic-lights span { width:11px; height:11px; border-radius:50%; display:inline-block; }
+  #traffic-lights span:nth-child(1){ background:#ed6a5e; }
+  #traffic-lights span:nth-child(2){ background:#f4bf4f; }
+  #traffic-lights span:nth-child(3){ background:#61c454; }
+  #url-bar {
+    flex:1 1 auto;
+    background:#fff;
+    border-radius:14px;
+    padding:6px 14px;
+    font-size:0.76rem;
+    color:#5f6368;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    max-width:560px;
+  }
+  #url-bar svg { flex:0 0 auto; opacity:0.6; }
+
+  /* ---- site wrapper ---- */
+  #site { background:#fff; max-width:1180px; margin:0 auto; }
+
+  /* utility nav */
+  #utility-nav {
+    background:#12151b;
+    color:rgba(255,255,255,0.7);
+    font-size:0.72rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:7px 24px;
+  }
+  #utility-nav .links { display:flex; gap:16px; }
+  #utility-nav .links span:hover { color:#fff; }
+  #utility-nav .meta { color:rgba(255,255,255,0.4); }
+
+  /* masthead */
+  #masthead {
+    display:flex;
+    align-items:center;
+    gap:22px;
+    padding:16px 24px 14px;
+    border-bottom:3px solid #cc0000;
+  }
+  #logo {
+    background:#cc0000;
+    color:#fff;
+    font-weight:900;
+    font-size:1.5rem;
+    letter-spacing:-0.02em;
+    padding:5px 10px 6px;
+    border-radius:2px;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  #masthead nav { display:flex; gap:20px; flex:1; }
+  #masthead nav span {
+    font-size:0.82rem;
+    font-weight:700;
+    color:#1a1a1a;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    cursor:default;
+  }
+  #masthead nav span.active { color:#cc0000; border-bottom:2px solid #cc0000; padding-bottom:4px; }
+
+  /* breaking ticker */
+  #ticker {
+    background:#cc0000;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    font-size:0.78rem;
+    font-weight:600;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  #ticker .badge {
+    background:#111;
+    padding:8px 14px;
+    font-weight:900;
+    letter-spacing:0.04em;
+    flex:0 0 auto;
+  }
+  #ticker .feed { padding:8px 16px; }
+
+  /* content grid */
+  #content {
+    display:grid;
+    grid-template-columns:1fr 340px;
+    gap:36px;
+    padding:28px 24px 60px;
+  }
+
+  article .eyebrow {
+    color:#cc0000;
+    font-size:0.72rem;
+    font-weight:800;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  article h1 {
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:2.1rem;
+    line-height:1.18;
+    color:#111;
+    margin-bottom:14px;
+  }
+  article .byline {
+    font-size:0.8rem;
+    color:#666;
+    margin-bottom:20px;
+    padding-bottom:18px;
+    border-bottom:1px solid #e5e5e5;
+  }
+  article p {
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:1.05rem;
+    line-height:1.75;
+    color:#232323;
+    margin-bottom:18px;
+  }
+  article .pull-quote {
+    font-family:Georgia, 'Times New Roman', serif;
+    font-style:italic;
+    font-size:1.35rem;
+    line-height:1.5;
+    color:#111;
+    border-left:4px solid #cc0000;
+    padding:4px 0 4px 20px;
+    margin:28px 0;
+  }
+  .native-slot {
+    margin:30px 0;
+    border:1px solid #eee;
+    background:#fafafa;
+    padding:16px;
+    display:flex;
+    gap:14px;
+    align-items:center;
+  }
+  .native-slot .swatch { width:64px; height:64px; border-radius:4px; background:linear-gradient(135deg,#cfd6dd,#aab3bd); flex:0 0 auto; }
+  .native-slot .txt .tag { font-size:0.62rem; font-weight:800; letter-spacing:0.08em; color:#999; text-transform:uppercase; margin-bottom:4px; }
+  .native-slot .txt h4 { font-size:0.92rem; color:#222; margin-bottom:3px; }
+  .native-slot .txt p { font-size:0.78rem; color:#777; margin:0; font-family:Helvetica, Arial, sans-serif; }
+
+  /* right rail */
+  aside { display:flex; flex-direction:column; align-items:center; gap:10px; }
+  aside .sponsor-label {
+    align-self:flex-start;
+    font-size:0.62rem;
+    font-weight:800;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:#9a9a9a;
+    margin-bottom:2px;
+  }
+  #ad-slot {
+    width:300px;
+    height:600px;
+    border:1px solid #e2e2e2;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    overflow:hidden;
+    background:#000;
+  }
+  #ad-slot iframe { width:300px; height:600px; border:0; display:block; }
+
+  .rail-more {
+    align-self:stretch;
+    margin-top:16px;
+  }
+  .rail-more .heading {
+    font-size:0.72rem;
+    font-weight:800;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:#111;
+    border-bottom:2px solid #111;
+    padding-bottom:8px;
+    margin-bottom:12px;
+  }
+  .rail-item {
+    display:flex;
+    gap:10px;
+    padding:10px 0;
+    border-bottom:1px solid #eee;
+  }
+  .rail-item .thumb { width:70px; height:52px; border-radius:2px; background:linear-gradient(135deg,#d8dde2,#b7bec6); flex:0 0 auto; }
+  .rail-item p { font-family:Helvetica, Arial, sans-serif; font-size:0.82rem; line-height:1.35; color:#1a1a1a; font-weight:600; }
+
+  @media (max-width:900px) {
+    #content { grid-template-columns:1fr; }
+    aside { align-items:stretch; }
+    #ad-slot { margin:0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<div id="disclaimer">
+  <strong>MOCKUP FOR INTERNAL CREATIVE REVIEW</strong> — a sample news-publisher layout used to preview ad placement. Not affiliated with or published by any real news organization.
+</div>
+
+<div id="browser-chrome">
+  <div id="traffic-lights"><span></span><span></span><span></span></div>
+  <div id="url-bar">
+    <svg width="12" height="12" viewBox="0 0 16 16"><path d="M8 1a4 4 0 00-4 4v2H3a1 1 0 00-1 1v6a1 1 0 001 1h10a1 1 0 001-1V8a1 1 0 00-1-1h-1V5a4 4 0 00-4-4zm-2.5 6V5a2.5 2.5 0 015 0v2h-5z" fill="currentColor"/></svg>
+    sample-newsnetwork.example/business/markets
+  </div>
+</div>
+
+<div id="site">
+  <div id="utility-nav">
+    <div class="links">
+      <span>U.S.</span><span>World</span><span>Politics</span><span>Business</span><span>Markets</span><span>Tech</span><span>Opinion</span>
+    </div>
+    <div class="meta">Friday · Business Edition</div>
+  </div>
+
+  <div id="masthead">
+    <div id="logo">SAMPLE&nbsp;NEWS</div>
+    <nav>
+      <span class="active">Business</span>
+      <span>Markets</span>
+      <span>Tech</span>
+      <span>Media</span>
+      <span>Success</span>
+    </nav>
+  </div>
+
+  <div id="ticker">
+    <span class="badge">BREAKING</span>
+    <span class="feed">Biotech index edges higher as investors position for second-half clinical readouts · Small-cap drug developers draw renewed fund interest · Fed path remains in focus for rate-sensitive sectors</span>
+  </div>
+
+  <div id="content">
+    <article>
+      <div class="eyebrow">Business · Markets</div>
+      <h1>Biotech Investors Turn to Second-Half Clinical Readouts as Rate Worries Ease</h1>
+      <div class="byline">By Business Desk Staff · Updated 2 hours ago · 4 min read</div>
+
+      <p>Shares of small- and mid-cap drug developers firmed this week as investors looked past macro headlines and toward a crowded calendar of mid-stage clinical readouts expected in the back half of the year.</p>
+
+      <p>Analysts say the shift reflects a broader rotation inside healthcare: after two years in which funding conditions dominated the sector&#x27;s direction, investors are again underwriting individual programs, with oncology and fibrosis among the areas drawing the closest attention.</p>
+
+      <div class="native-slot">
+        <div class="swatch"></div>
+        <div class="txt">
+          <div class="tag">Sponsored</div>
+          <h4>What&#x27;s driving investor interest in clinical-stage biotech</h4>
+          <p>sample-newsnetwork.example</p>
+        </div>
+      </div>
+
+      <p>“The market is paying for data again, not just for cash runway,” said one healthcare portfolio manager. “Companies with a defined catalyst and a clear mechanism are the ones getting a second look.”</p>
+
+      <div class="pull-quote">"The market is paying for data again, not just for cash runway."</div>
+
+      <p>Fund managers note that oral small-molecule programs have been a particular focus, as developers work to reach disease targets that earlier generations of drugs could not address directly.</p>
+    </article>
+
+    <aside>
+      <div class="sponsor-label">Advertisement</div>
+      <div id="ad-slot">
+        <iframe id="ad-frame" title="Sample ad placement" scrolling="no"></iframe>
+      </div>
+
+      <div class="rail-more">
+        <div class="heading">More From Business</div>
+        <div class="rail-item"><div class="thumb"></div><p>Biotech small caps outpace the broader market for a third straight week</p></div>
+        <div class="rail-item"><div class="thumb"></div><p>Why second-half readouts are back at the center of healthcare investing</p></div>
+        <div class="rail-item"><div class="thumb"></div><p>Oral small molecules draw renewed attention from specialist funds</p></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+  var CONCEPTS = {
+    a: '../concept-a-photo/index.html',
+    b: '../concept-b-editorial/index.html',
+    c: '../concept-c-dashboard/index.html'
+  }
+  var params = new URLSearchParams(window.location.search)
+  var concept = params.get('concept')
+  if (!CONCEPTS[concept]) concept = 'a'
+  document.getElementById('ad-frame').src = CONCEPTS[concept]
+</script>
+
+</body>
+</html>
